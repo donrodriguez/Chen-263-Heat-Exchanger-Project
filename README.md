@@ -31,8 +31,6 @@ Unit_type = input("What units will you be using (AES or SI) for your input calcu
 if Unit_type.upper() == "AES":
     hotf = input("Enter the hotter fluid species: ")
 
-
-
 # import Excel file of Data
 #knowns
 #Equations
