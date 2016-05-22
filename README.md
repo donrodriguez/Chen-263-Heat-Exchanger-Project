@@ -17,7 +17,8 @@ def mflowSI(x): #converts lb-m/s to kg/s
     return x*.453593
 def tempSI(F): #Converts F to C degrees
     return (F-32)/1.8
-
+    
+#dictionary for substance properties
 water = {"MW": 18.01528, "Mp": 273.15, "Bp" : 373.15 , "A": 276370 , "B": -2090.1 , "C":8.125, "D":-0.014116,
          "E":9.3701E-06}
 r134a = {"MW":102.03089, "Mp":172.00 , "Bp" :247.08 , "A":6.5108E+05 , "B":-9.5057E+03 , "C":6.2835E+01 ,
