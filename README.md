@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import fsolve
 
-#Shows the available substances to the user
+
 print("Substances available for this heat exchanger calculation: ")
-subs = ["Water", "R134a", "Ethanol", "2,2,4-trimethylpentane (tmp for short)"]
+subs = ["Water", "R134a", "Ethanol", "2,2,4-trimethylpentane (type tmp for short)"]
 for x in subs:
     print(x)
 
@@ -19,7 +19,6 @@ def tempSI(F): #Converts F to C degrees
     return (F-32)/1.8
 
 #Substance properties
-
 water = {"MW": 18.01528, "Mp": 273.15, "Bp" : 373.15 , "A": 276370.0 , "B": -2090.1 , "C":8.125, "D":-0.014116,
          "E":9.3701E-06}
 r134a = {"MW":102.03089, "Mp":172.00 , "Bp" :247.08 , "A":6.5108E+05 , "B":-9.5057E+03 , "C":6.2835E+01 ,
@@ -29,9 +28,8 @@ ethanol = {"MW":46.06844 , "Mp":159.05, "Bp":351.44 , "A":1.0264E+05, "B":-1.396
 tmp = {"MW":114.22852 , "Mp":165.777, "Bp":372.388, "A":9.5275E+04, "B":6.9670E+02 , "C":-1.3765E+00, "D":2.1734E-03,
        "E":0.0}
 
-#defines a function to create a polynomial with Tc_o as the variable. For finding the root; i.e., the value of Tc_o
-
-def Tc_o(Th_i, Tc_i, Th_o, mh, mc, hf, cf, T):
+#Creates polynomial with Tc_o as the variable
+def Tc_o_func(Th_i, Tc_i, Th_o, mh, mc, hf, cf, T):
     '''
     :param Th_i: input Temp for hot fluid
     :param Tc_i: input Temp for cold fluid
@@ -40,7 +38,8 @@ def Tc_o(Th_i, Tc_i, Th_o, mh, mc, hf, cf, T):
     :param mc: mass flow rate of cold fluid
     :param hf: hot fluid species
     :param cf: cold fluid species
-    :return: Output temp for cold fluid
+    :param T: input for linspace
+    :return: a polynomial with Tc_o as the variable
     '''
 
     Th_avg = (Th_i + Th_o)/2 #average Temp of the hot fluid
@@ -56,10 +55,33 @@ def Tc_o(Th_i, Tc_i, Th_o, mh, mc, hf, cf, T):
     y = a*T + b*T**2 + c*T**3 + d*T**4 + e*T**5 + alpha - beta
     return y
 
-x = np.linspace(0, 400, 10000)
-y = Tc_o(360, 278, 300, .5, 5.0, water, water,x) #testing to see if the parameters given by the soln actually result in the answer of Tc_o given 
-plt.plot(x, y)
-plt.plot(x, np.zeros(len(x)))
+#creates polynomial with Th_o as the variable
+def Th_o_func(Tc_i, Th_i, Tc_o, mh, mc, cf, hf, T):
+    '''
+    :param Tc_i: input Temp for cold fluid
+    :param Th_i: input Temp for hot fluid
+    :param Tc_o: output Temp for cold fluid
+    :param mh: mass flow rate of hot fluid
+    :param mc: mass flow rate of cold fluid
+    :param cf: cold fluid species
+    :param hf: hot fluid species
+    :param T: input for linspace
+    :return: a polynomial with Th_o as the variable
+    '''
+
+    Th_avg = (Tc_i + Tc_o) / 2 #average Temp of the cold fluid
+    Cp_c = cf["A"] + cf["B"] * Th_avg + cf["C"] * Th_avg ** 2 + cf["D"] * Th_avg ** 3 + \
+           cf["E"] * Th_avg ** 4 #heat capacity of cold fluid
+    beta = hf["MW"] * mc * Cp_c * (Tc_o - Tc_i) / (mh * cf["MW"])
+    a = -hf["A"] + (1 / 4) * (hf["C"] * Th_i ** 2 + hf["D"] * Th_i ** 3) + 3 * hf["E"] * Th_i ** 4 / 16
+    b = -hf["B"] / 2 - hf["C"] * Th_i / 4 + hf["E"] * Th_i ** 3 / 8
+    c = -hf["C"] / 4 - hf["D"] * Th_i / 4 - hf["E"] * Th_i ** 2 / 8
+    d = -hf["D"] / 8 - 3 * hf["E"] * Th_i / 16
+    e = -hf["E"] / 16
+    alpha = hf["A"] * Th_i + hf["B"] * Th_i ** 2 / 2 + hf["C"] * Th_i ** 3 / 4 + hf["D"] * Th_i ** 4 / 8 \
+            + hf["E"] * Th_i ** 5 / 16
+    y = a*T + b*T**2 + c*T**3 + d*T**4 + e*T**5 + alpha - beta
+    return y
 
 
 Unit_type = input("What units will you be using (AES or SI) for your input calculations?:  ")
