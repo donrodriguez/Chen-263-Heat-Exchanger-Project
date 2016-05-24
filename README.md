@@ -101,3 +101,8 @@ q=F*U*A*Tlm
 q=mh*Cph*(Th,i-Th,o)
 q=mc*Cpc*(Tc,o-Tc,i)
 #Answers
+
+A=F*U*Tlm/q
+cost=A*1000
+print(A)
+print('$',cost)
