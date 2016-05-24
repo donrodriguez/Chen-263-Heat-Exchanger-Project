@@ -29,7 +29,7 @@ tmp = {"MW":114.22852 , "Mp":165.777, "Bp":372.388, "A":9.5275E+04, "B":6.9670E+
        "E":0.0}
 
 #Creates polynomial with Tc_o as the variable
-def Tc_o_func(Th_i, Tc_i, Th_o, mh, mc, hf, cf, T):
+def Tc_o_func(T, Th_i, Tc_i, Th_o, mh, mc, hf, cf):
     '''
     :param Th_i: input Temp for hot fluid
     :param Tc_i: input Temp for cold fluid
@@ -38,13 +38,13 @@ def Tc_o_func(Th_i, Tc_i, Th_o, mh, mc, hf, cf, T):
     :param mc: mass flow rate of cold fluid
     :param hf: hot fluid species
     :param cf: cold fluid species
-    :param T: input for linspace
+    :param T: Temperature
     :return: a polynomial with Tc_o as the variable
     '''
 
-    Th_avg = (Th_i + Th_o)/2 #average Temp of the hot fluid
+    Th_avg = (Th_i + Th_o)/2  # average Temp of the hot fluid
     Cp_h = hf["A"] + hf["B"] * Th_avg + hf["C"] * Th_avg ** 2 + hf["D"] * Th_avg ** 3 + \
-           hf["E"] * Th_avg ** 4 #heat capacity of hot fluid
+           hf["E"] * Th_avg ** 4  # heat capacity of hot fluid
     beta = cf["MW"] * mh * Cp_h * (Th_i - Th_o) / (mc*hf["MW"])
     a = cf["A"] + (1/4)*(-cf["C"]*Tc_i**2 - cf["D"] * Tc_i**3) - 3*cf["E"]*Tc_i**4/16
     b = cf["B"]/2 + cf["C"]*Tc_i/4 - cf["E"]*Tc_i**3/8
@@ -56,7 +56,7 @@ def Tc_o_func(Th_i, Tc_i, Th_o, mh, mc, hf, cf, T):
     return y
 
 #creates polynomial with Th_o as the variable
-def Th_o_func(Tc_i, Th_i, Tc_o, mh, mc, cf, hf, T):
+def Th_o_func(T, Tc_i, Th_i, Tc_o, mh, mc, cf, hf):
     '''
     :param Tc_i: input Temp for cold fluid
     :param Th_i: input Temp for hot fluid
@@ -65,13 +65,13 @@ def Th_o_func(Tc_i, Th_i, Tc_o, mh, mc, cf, hf, T):
     :param mc: mass flow rate of cold fluid
     :param cf: cold fluid species
     :param hf: hot fluid species
-    :param T: input for linspace
+    :param T: temperature
     :return: a polynomial with Th_o as the variable
     '''
 
-    Th_avg = (Tc_i + Tc_o) / 2 #average Temp of the cold fluid
+    Th_avg = (Tc_i + Tc_o) / 2  # average Temp of the cold fluid
     Cp_c = cf["A"] + cf["B"] * Th_avg + cf["C"] * Th_avg ** 2 + cf["D"] * Th_avg ** 3 + \
-           cf["E"] * Th_avg ** 4 #heat capacity of cold fluid
+           cf["E"] * Th_avg ** 4  # heat capacity of cold fluid
     beta = hf["MW"] * mc * Cp_c * (Tc_o - Tc_i) / (mh * cf["MW"])
     a = -hf["A"] + (1 / 4) * (hf["C"] * Th_i ** 2 + hf["D"] * Th_i ** 3) + 3 * hf["E"] * Th_i ** 4 / 16
     b = -hf["B"] / 2 - hf["C"] * Th_i / 4 + hf["E"] * Th_i ** 3 / 8
@@ -82,7 +82,6 @@ def Th_o_func(Tc_i, Th_i, Tc_o, mh, mc, cf, hf, T):
             + hf["E"] * Th_i ** 5 / 16
     y = a*T + b*T**2 + c*T**3 + d*T**4 + e*T**5 + alpha - beta
     return y
-
 
 Unit_type = input("What units will you be using (AES or SI) for your input calculations?:  ")
 if Unit_type.upper() == "AES":
