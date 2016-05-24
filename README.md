@@ -1,5 +1,6 @@
 # Chen-263-Heat-Exchanger-Project
 import matplotlib.pyplot as plt
+%matplotlib inline
 import numpy as np
 from scipy.optimize import fsolve
 
@@ -8,9 +9,10 @@ print("Substances available for this heat exchanger calculation: ")
 subs = ["Water", "R134a", "Ethanol", "2,2,4-trimethylpentane (type tmp for short)"]
 for x in subs:
     print(x)
+#how does the user imput a substance?
 
 #Unit conversions from AES to SI
-
+#User will need to be able to imput numbers that can then be changed to SI
 def U_SI(x): #Converts Overall Heat Transfer Coefficient (U) in AES units (Btu/(hr-ft^2-F)) to SI
     return x* 3.2808**2 * 1.8 /(3600 * 9.486*10**(-4))
 def mflowSI(x): #converts lb-m/s to kg/s
@@ -106,3 +108,4 @@ A=F*U*Tlm/q
 cost=A*1000
 print(A)
 print('$',cost)
+print(Th_o)#will put in equation for this
