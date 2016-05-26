@@ -335,10 +335,8 @@ def get_A(Th_i, Th_o, Tc_i, Tc_o, hf, u):
     A = q / (F * u * DelT_lm)
     return A
 
-# Returns results
+# Returns Deliverables
 Area = get_A(Thi, Tho, Tci, Tco, hotf, U)
-
-# print(get_A(300.0, 360.0, 278.0, 283.96, "water", 100.0))
 
 print("")
 print("Surface area for heat exchanger: {SA} m^2 ".format(SA=Area))
