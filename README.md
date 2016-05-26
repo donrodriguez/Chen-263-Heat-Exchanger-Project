@@ -84,10 +84,57 @@ def Th_o_func(T, Tc_i, Th_i, Tc_o, mh, mc, cf, hf):
             + hf["E"] * Th_i ** 5 / 16
     y = a*T + b*T**2 + c*T**3 + d*T**4 + e*T**5 + alpha - beta
     return y
+    
+hotf = input("Enter Hotter fluid species: ")
 
-Unit_type = input("What units will you be using (AES or SI) for your input calculations?:  ")
-if Unit_type.upper() == "AES":
-    hotf = input("Enter the hotter fluid species: ")
+while True:
+    Thi, Unit1 = input("Enter Hot Fluid inlet Temp & Units (F or K): ").split()
+    if Unit1.upper()!="F" and Unit1.upper()!="K":
+        print("Invalid Unit Entries.")
+        continue
+    try:
+        Thi = float(Thi)
+    except ValueError:
+        print("Invalid Temp Entry")
+        continue
+    if Unit1.upper() == "F":
+        Thi = tempSI(Thi)
+    elif Unit1.upper() == "K":
+        Thi = Thi
+    if Thi < substances[hotf]["Mp"]:
+        print("Invalid Temp. Solid substance.")
+        continue
+    elif Thi > substances[hotf]["Bp"]:
+        print("Invalid Temp. Gaseous substance.")
+        continue
+    else:
+        break
+
+coldf = input("Enter Colder fluid species: ")
+
+while True:
+    Tci, Unit2 = input("Enter Cold Fluid inlet Temp & Units (F or K): ").split()
+    if Unit2.upper()!="F" and Unit2.upper()!="K":
+        print("Invalid Unit Entries.")
+        continue
+    try:
+        Tci = float(Tci)
+    except ValueError:
+        print("Invalid Temp Entry")
+        continue
+    if Unit2.upper() == "F":
+        Tci = tempSI(Tci)
+    elif Unit2.upper() == "K":
+        Tci = Tci
+    if Tci < substances[coldf]["Mp"]:
+        print("Invalid Temp. Solid substance.")
+        continue
+    elif Tci > substances[coldf]["Bp"]:
+        print("Invalid Temp. Gaseous substance.")
+        continue
+    else:
+        break
+        
 
 
 # import Excel file of Data
