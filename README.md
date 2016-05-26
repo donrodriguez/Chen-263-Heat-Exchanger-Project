@@ -85,6 +85,7 @@ def Th_o_func(T, Tc_i, Th_i, Tc_o, mh, mc, cf, hf):
     y = a*T + b*T**2 + c*T**3 + d*T**4 + e*T**5 + alpha - beta
     return y
     
+# Asks User input
 hotf = input("Enter Hotter fluid species: ")
 
 while True:
