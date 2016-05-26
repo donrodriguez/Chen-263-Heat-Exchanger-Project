@@ -156,4 +156,4 @@ A=F*U*Tlm/q
 cost=A*1000
 print(A)
 print('$',cost)
-print(Th_o)#will put in equation for this
+print(Th_o or Tc_o)#will put in equation for this
