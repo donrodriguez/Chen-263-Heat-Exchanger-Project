@@ -91,11 +91,21 @@ def Th_o_func(T, Tc_i, Th_i, Tc_o, mh, mc, cf, hf):
 
 
 # Asks user to pick hot fluid species
-hotf = input("Enter Hotter fluid species: ")
+list = ["water", "r134a", "ethanol", "tmp"]
+
+# Asks user to pick hot fluid species
+while True:
+    hotf = input("Enter Hotter fluid species: ")
+    hotf = hotf.lower()
+    if hotf not in list:
+        print("Invalid Species")
+        continue
+    else:
+        break
 
 while True:
     Thi, Unit1 = input("Enter Hot Fluid inlet Temp & Units (F or K): ").split()
-    if Unit1.upper() != "F" or Unit1.upper() != "K":
+    if Unit1.upper() != "F" and Unit1.upper() != "K":
         print("Invalid Units.")
         continue
     try:
@@ -117,7 +127,14 @@ while True:
         break
 
 # Asks user to pick cold fluid species
-coldf = input("Enter Colder fluid species: ")
+while True:
+    coldf = input("Enter Colder fluid species: ")
+    coldf = coldf.lower()
+    if coldf not in list:
+        print("Invalid Species")
+        continue
+    else:
+        break
 
 while True:
     Tci, Unit2 = input("Enter Cold Fluid inlet Temp & Units (F or K): ").split()
