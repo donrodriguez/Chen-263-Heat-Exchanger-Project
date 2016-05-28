@@ -95,7 +95,7 @@ hotf = input("Enter Hotter fluid species: ")
 
 while True:
     Thi, Unit1 = input("Enter Hot Fluid inlet Temp & Units (F or K): ").split()
-    if Unit1.upper() != "F" and Unit1.upper() != "K":
+    if Unit1.upper() != "F" or Unit1.upper() != "K":
         print("Invalid Units.")
         continue
     try:
