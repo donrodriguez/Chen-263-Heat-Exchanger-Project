@@ -28,6 +28,7 @@ ethanol = {"MW": 46.06844, "Mp": 159.05, "Bp": 351.44, "A": 1.0264E+05, "B": -1.
            "D": 2.0386E-03, "E": 0.0}
 tmp = {"MW": 114.22852, "Mp": 165.777, "Bp": 372.388, "A": 9.5275E+04, "B": 6.9670E+02, "C": -1.3765E+00,
        "D": 2.1734E-03, "E": 0.0}
+       
 # Dictionary of dictionaries
 subst = {"water": water, "r134a": r134a, "ethanol": ethanol, "tmp": tmp}
 
@@ -93,7 +94,6 @@ def Th_o_func(T, Tc_i, Th_i, Tc_o, mh, mc, cf, hf):
 # Asks user to pick hot fluid species
 list = ["water", "r134a", "ethanol", "tmp"]
 
-# Asks user to pick hot fluid species
 while True:
     hotf = input("Enter Hotter fluid species: ")
     hotf = hotf.lower()
