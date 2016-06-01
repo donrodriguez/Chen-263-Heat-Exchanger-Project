@@ -12,8 +12,8 @@ print(" ")
 
 # Unit conversions from AES to SI
 
-def U_SI(x):  # Converts Overall Heat Transfer Coefficient (U) in AES units (Btu/(hr-ft^2-F)) to SI
-    return x * 3.2808**2 * 1.8 / (3600 * 9.486*10**(-4))
+def U_SI(x):  # Converts Overall Heat Transfer Coefficient (U) in AES units (Btu/(s-ft^2-R)) to SI J/(s-m^2-K)
+    return x * 3.2808**2 * 1.8 / (9.486*10**(-4))
 def mflowSI(x):  # converts lb-m/s to kg/s
     return x*.453593
 def tempSI(F):  # Converts F to K degrees
@@ -256,8 +256,8 @@ while True:
 
 # Asks user for Overall Heat Transfer Coefficient
 while True:
-    U, Unit5 = input("Enter Overall Heat Transfer Coefficient (U) & Units [Enter 1 for Btu/(hr-ft^2-F)."
-                     " Enter 2 for J/(s-m^2-K)]: ").split()
+    U, Unit5 = input("Enter Overall Heat Transfer Coefficient (U) & Units [1 = Btu/(s-ft^2-R)."
+                     " 2 = J/(s-m^2-K)]: ").split()
     if Unit5 != "1" and Unit5!= "2":
         print("Invalid Units.")
         continue
