@@ -1,11 +1,12 @@
 #FINAL PROJECT!!!!!!
 #So Travel plan- need to access some ticket service thing/place and get all their data
+#https://developers.google.com/qpx-express/ is the easy option
         #Do this last first build the program around fake data so I don't have to pay .35c after 50 queries
         # jake in charge of making fake program- do like 5 places and prices between
 # they should be able to imput a starting airport or city and an end city/airport 
 #as well as the airline they want to take (they can choose a don't care btw)
 #we need to organize the data according to price
-#All the information will be displayed in order of least expensive up
-
+#All the information will be displayed in order of least expensive up -10 options should be enough
+# should be able to click on a price and buy a ticket
 
 print(#this project is going to be lit)
