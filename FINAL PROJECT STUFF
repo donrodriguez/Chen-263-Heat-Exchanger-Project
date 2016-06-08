@@ -11,6 +11,24 @@
 
 print(#this project is going to be lit)
 
+LAX = {}
+NYC = {}
+ATL = {}
+
+Places = {"LAX": LAX, "NYC": NYC, "ATL": ATL}
+
+
+list = ["LAX", "NYC", "ATL"]
+
+# Asks user to pick hot fluid species
+while True:
+    city = input("Enter Hotter fluid species: ")
+    city = city.upper()
+    if city not in list:
+        print("Invalid City")
+        continue
+    else:
+        break
 
 #input code needed in order to be able to check whihc cities and dates we will be traveling between.
 
