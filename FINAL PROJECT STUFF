@@ -31,19 +31,9 @@ while True:
         break
 
 #input code needed in order to be able to check whihc cities and dates we will be traveling between.
-
+# varialbes created below
+print("Works for the airports: LAX,JFK,and ATL")
 date_dep=input("What date do you want to leave?: " )
-City_dep=input("What city will you be leaving from?: ")
+date_ret=input("which date are you going to return?: ")
+airport_dep=input("What city will you be leaving from?: ")
 City_arriv=input("Where will you be traveling to?: ")
-
-
-while True:
-    Rt=input("Will this be a round trip?: ")
-    if Rt== "yes":
-        date_leave=input("when do you plan to return?: ")
-        city_Return=City_dep
-        city_Leave=City_arriv
-    else:
-        date_leave=input("when do you plan to return?: ")
-        city_leave=input("which city will you be leaving from?: ")
-        city_return=input("which city will you be returning to?: ")
