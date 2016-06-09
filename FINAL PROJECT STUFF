@@ -34,6 +34,15 @@ while True:
 # varialbes created below
 print("Works for the airports: LAX,JFK,and ATL")
 date_dep=input("What date do you want to leave?: " )
+date_dep=date_dep.upper()
 date_ret=input("which date are you going to return?: ")
-airport_dep=input("What city will you be leaving from?: ")
-City_arriv=input("Where will you be traveling to?: ")
+date_ret=date_ret.upper()
+airport_dep=input("What airport will you be leaving from?: ")
+airport_dep=airport_dep.upper()
+airport_arriv=input("Which airport will you be traveling to?: ")
+airport_arriv=airport_arriv.upper()
+if airport not in list:
+        print("Invalid airport")
+        continue
+else:
+        break
