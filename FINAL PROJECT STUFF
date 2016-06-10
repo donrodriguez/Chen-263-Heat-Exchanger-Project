@@ -11,38 +11,71 @@
 
 print(#this project is going to be lit)
 
-LAX = {}
-NYC = {}
-ATL = {}
+sdML = {}
+ML = {"sameday": sdML, "oneday": onedML, "twoday": twodML}
 
-Places = {"LAX": LAX, "NYC": NYC, "ATL": ATL}
+
+
+
+
+LAX = {"M": ML, "T": TL, "W": WL, "TH": THL, "F": FL, "SA": SL, "SU": SUL}
+NYC = {"M": MN, "T": TN, "W": WN, "TH": THN, "F": FN, "SA": SN, "SU": SUN}
+ATL = {"M": MA, "T": TA, "W": WA, "TH": THA, "F": FA, "SA": SA, "SU": SUA}
+
+sameday = {"LAX": LAX, "NYC": NYC, "ATL": ATL}
+
+oneday = {"LAX": LAX, "NYC": NYC, "ATL": ATL}
+
+
+twoday = {"LAX": LAX, "NYC": NYC, "ATL": ATL}
 
 
 list = ["LAX", "NYC", "ATL"]
 
-# Asks user to pick hot fluid species
+#input code needed in order to be able to check which cities and dates we will be traveling between.
+# variables created below
+print("Works for the airports: LAX,JFK,and ATL")
+
 while True:
-    city = input("Enter Hotter fluid species: ")
-    city = city.upper()
-    if city not in list:
-        print("Invalid City")
+    airport_dep = input("What airport will you be leaving from?: ")
+    airport_dep = airport_dep.upper()
+    if airport_dep not in list:
+        print("Invalid airport")
         continue
     else:
         break
 
-#input code needed in order to be able to check whihc cities and dates we will be traveling between.
-# varialbes created below
-print("Works for the airports: LAX,JFK,and ATL")
-date_dep=input("What date do you want to leave?: " )
-date_dep=date_dep.upper()
-date_ret=input("which date are you going to return?: ")
-date_ret=date_ret.upper()
-airport_dep=input("What airport will you be leaving from?: ")
-airport_dep=airport_dep.upper()
-airport_arriv=input("Which airport will you be traveling to?: ")
-airport_arriv=airport_arriv.upper()
-if airport not in list:
+while True:
+    airport_arriv = input("Which airport will you be traveling to?: ")
+    airport_arriv = airport_arriv.upper()
+    if airport_arriv not in list:
         print("Invalid airport")
         continue
-else:
+    else:
+        break
+
+while True:
+    date_dep = input("What date do you want to leave?: ")
+    try:
+        date_dep = int(date_dep)
+    except ValueError:
+        print("Invalid Entry")
+        continue
+    if date_dep > 19:
+        print("Invalid date")
+        continue
+    else:
+        break
+        
+while True:
+    date_ret = input("which date are you going to return?: ")
+    try:
+        date_ret = int(date_ret)
+    except ValueError:
+        print("Invalid Entry")
+        continue
+    if date_ret > 19:
+        print("Invalid date")
+        continue
+    else:
         break
