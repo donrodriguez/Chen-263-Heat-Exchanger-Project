@@ -1,41 +1,22 @@
-#FINAL PROJECT!!!!!!
-#So Travel plan- need to access some ticket service thing/place and get all their data
-#https://developers.google.com/qpx-express/ is the easy option
-        #Do this last first build the program around fake data so I don't have to pay .35c after 50 queries
-        # jake in charge of making fake program- do like 5 places and prices between
-# they should be able to imput a starting airport or city and an end city/airport 
-#as well as the airline they want to take (they can choose a don't care btw)
-#we need to organize the data according to price
-#All the information will be displayed in order of least expensive up -10 options should be enough
-# should be able to click on a price and buy a ticket
+import yaml
+with open("F data.yaml") as fd:
+    fd = yaml.load(fd)
 
-print(#this project is going to be lit)
+list = ["LAX", "JFK", "ATL"]
 
-sdML = {}
-ML = {"sameday": sdML, "oneday": onedML, "twoday": twodML}
+print('''
+Welcome to Flight Ticket Quoter!
+This program allows you to search for airplane ticket prices to select few airports.
 
+Date options:
+June 13-19
 
+Airport Departure/ Arrival options:
+LAX, ATL, JFK
 
+''')
 
-
-LAX = {"M": ML, "T": TL, "W": WL, "TH": THL, "F": FL, "SA": SL, "SU": SUL}
-NYC = {"M": MN, "T": TN, "W": WN, "TH": THN, "F": FN, "SA": SN, "SU": SUN}
-ATL = {"M": MA, "T": TA, "W": WA, "TH": THA, "F": FA, "SA": SA, "SU": SUA}
-
-sameday = {"LAX": LAX, "NYC": NYC, "ATL": ATL}
-
-oneday = {"LAX": LAX, "NYC": NYC, "ATL": ATL}
-
-
-twoday = {"LAX": LAX, "NYC": NYC, "ATL": ATL}
-
-
-list = ["LAX", "NYC", "ATL"]
-
-#input code needed in order to be able to check which cities and dates we will be traveling between.
-# variables created below
-print("Works for the airports: LAX,JFK,and ATL")
-
+# Asks user for
 while True:
     airport_dep = input("What airport will you be leaving from?: ")
     airport_dep = airport_dep.upper()
@@ -55,27 +36,125 @@ while True:
         break
 
 while True:
-    date_dep = input("What date do you want to leave?: ")
+    dayrt = input("1 = Round Trip same day or 2 = Round Trip different day?")
     try:
-        date_dep = int(date_dep)
+        dayrt = int(dayrt)
     except ValueError:
         print("Invalid Entry")
         continue
-    if date_dep > 19:
+    if dayrt != 1 and dayrt != 2:
         print("Invalid date")
         continue
     else:
         break
-        
-while True:
-    date_ret = input("which date are you going to return?: ")
-    try:
-        date_ret = int(date_ret)
-    except ValueError:
-        print("Invalid Entry")
-        continue
-    if date_ret > 19:
-        print("Invalid date")
-        continue
-    else:
+
+if dayrt == 1:
+    while True:
+        date_dep_arriv = input("Date of same day departure & arrival?")
+        try:
+            date_dep_arriv = int(date_dep_arriv)
+        except ValueError:
+            print("Invalid Entry")
+            continue
+        if not (13 <= date_dep_arriv <= 19):
+            print("Invalid date")
+            continue
+        else:
+            break
+
+elif dayrt == 2:
+    print("Different day Round Trips only available for following departure dates:")
+    print("13 & 14")
+    while True:
+        ddrt = input("13 or 14?")
+        try:
+            ddrt = int(ddrt)
+        except ValueError:
+            print("Invalid Entry")
+            continue
+        if ddrt != 13 and ddrt != 14:
+            print("Invalid Date")
+            continue
+        if ddrt == 13:
+            while True:
+                print("Select Return date:")
+                print("14 through 19")
+                print("")
+                retdate = input("Enter Return date:")
+                try:
+                    retdate = int(retdate)
+                except ValueError:
+                    print("Invalid Entry")
+                    continue
+                if not (14 <= retdate <= 19):
+                    print(" "
+                          "Invalid date"
+                          " ")
+                    continue
+                else:
+                    break
+        elif ddrt == 14:
+            while True:
+                print("Select Return date:")
+                print("15 through 19")
+                print("")
+                retdate = input("Enter Return date:")
+                try:
+                    retdate = int(retdate)
+                except ValueError:
+                    print("Invalid Entry")
+                    continue
+                if not (15 <= retdate <= 19):
+                    print(" "
+                          "Invalid date"
+                          " ")
+                    continue
+                else:
+                    break
+
         break
+
+print('''
+
+Ticket info format:
+
+Airline Company, Time (Military), Price
+ ''')
+ 
+if dayrt == 1:
+    if (airport_dep == "ATL" and airport_arriv == "LAX") or (airport_dep == "LAX" and airport_arriv == "ATL"):
+        for item in fd["SamedayF"]["ATL-LAX"][date_dep_arriv]:
+            print(item)
+    elif (airport_dep == "ATL" and airport_arriv == "JFK") or (airport_dep == "JFK" and airport_arriv == "ATL"):
+        for item in fd["SamedayF"]["ATL-JFK"][date_dep_arriv]:
+            print(item)
+    elif (airport_dep == "LAX" and airport_arriv == "JFK") or (airport_dep == "JFK" and airport_arriv == "LAX"):
+        for item in fd["SamedayF"]["LAX-JFK"][date_dep_arriv]:
+            print(item)
+
+elif dayrt == 2:
+    if ddrt == 13:
+        if (airport_dep == "ATL" and airport_arriv == "LAX") or (airport_dep == "LAX" and airport_arriv == "ATL"):
+            for item in fd["13var"]["ATL-LAX"][retdate]:
+                print(item)
+        elif (airport_dep == "ATL" and airport_arriv == "JFK") or (airport_dep == "JFK" and airport_arriv == "ATL"):
+            for item in fd["13var"]["ATL-JFK"][retdate]:
+                print(item)
+        elif (airport_dep == "LAX" and airport_arriv == "JFK") or (airport_dep == "JFK" and airport_arriv == "LAX"):
+            for item in fd["13var"]["LAX-JFK"][retdate]:
+                print(item)
+
+    elif ddrt == 14:
+        if (airport_dep == "ATL" and airport_arriv == "LAX") or (airport_dep == "LAX" and airport_arriv == "ATL"):
+            for item in fd["14var"]["ATL-LAX"][retdate]:
+                print(item)
+        elif (airport_dep == "ATL" and airport_arriv == "JFK") or (airport_dep == "JFK" and airport_arriv == "ATL"):
+            for item in fd["14var"]["ATL-JFK"][retdate]:
+                print(item)
+        elif (airport_dep == "LAX" and airport_arriv == "JFK") or (airport_dep == "JFK" and airport_arriv == "LAX"):
+            for item in fd["14var"]["LAX-JFK"][retdate]:
+                print(item)
+
+print('''
+
+Thank you for using Flight Ticket Quoter!''')
