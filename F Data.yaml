@@ -1,0 +1,356 @@
+SamedayF:
+
+    ATL-LAX:
+
+       13:
+          - American Airline 23:50  $362.60
+          - American Airline 01:21  $369.60
+          - American Airline 10:33  $376.70
+          - American Airline 15:55  $393.60
+          - American Airline 21:08  $399.20
+
+       14:
+          - American Airline 00:59  $329.20
+          - United 17:27  $392.00
+          - United 05:04  $374.00
+          - United 18:49  $375.00
+          - United 05:51  $400.00
+       15:
+          - American Airline 15:29  $407.00
+          - Sprint 03:23  $390.00
+          - American Airline 17:30  $405.00
+          - American Airline 09:57  $362.00
+          - United 02:00  $381.00
+       16:
+          - American Airline 14:50  $409.00
+          - American Airline 10:12  $370.00
+          - American Airline 01:35  $372.00
+          - United 04:07  $369.00
+          - United 04:58  $368.00
+       17:
+          - American Airline 22:26  $393.00
+          - American Airline 16:49  $382.00
+          - American Airline 19:26  $379.00
+          - United 08:43  $378.00
+          - United 09:23  $390.00
+       18:
+          - American Airline 11:47  $387.00
+          - American Airline 19:06  $366.00
+          - American Airline 13:51  $387.00
+          - American Airline 15:02  $384.00
+          - American Airline 00:20  $372.00
+       19:
+          - American Airline 10:29  $382.00
+          - American Airline 03:55  $391.00
+          - American Airline 02:01  $381.00
+          - American Airline 11:01  $395.00
+          - Frontier 16:48  $405.00
+
+    ATL-JFK:
+
+       13:
+           - American Airline 17:38  $418.60
+           - American Airline 21:58  $418.60
+           - American Airline 22:06  $418.60
+           - American Airline 00:18  $418.60
+           - American Airline 22:56  $418.60
+       14:
+           - American Airline 19:24  $418.60
+           - American Airline 01:31  $418.60
+           - American Airline 23:51  $418.60
+           - American Airline 02:12  $418.60
+           - American Airline 17:46  $418.60
+       15:
+           - American Airline 12:41  $418.60
+           - American Airline 05:32  $418.60
+           - American Airline 02:57  $418.60
+           - American Airline 09:40  $418.60
+           - American Airline 16:06  $418.60
+       16:
+           - American Airline 06:16  $418.60
+           - American Airline 09:31  $418.60
+           - American Airline 18:38  $418.60
+           - American Airline 11:05  $418.60
+           - American Airline 08:00  $418.60
+       17:
+           - American Airline 22:21  $418.60
+           - American Airline 02:38  $418.60
+           - American Airline 16:11  $418.60
+           - American Airline 02:11  $418.60
+           - American Airline 01:19  $418.60
+       18:
+           - Delta 05:39  $408.60
+           - Delta 19:17  $408.60
+           - Delta 15:59  $408.60
+           - Delta 21:02  $408.60
+           - Delta 06:08  $417.60
+       19:
+           - American Airline 16:38  $418.60
+           - American Airline 09:23  $418.60
+           - American Airline 22:37  $418.60
+           - American Airline   02:45  $418.60
+           - American Airline 10:09  $418.60
+
+    LAX-JFK:
+
+       13:
+           - American Airline 11:23  $572.00
+           - American Airline 13:05  $500.00
+           - Jet Blue 00:18  $589.00
+           - Jet Blue 01:34  $460.00
+           - Jet Blue 00:55  $566.00
+       14:
+           - American Airline 21:19  $489.00
+           - American Airline 07:07  $537.00
+           - American Airline 10:26  $501.00
+           - American Airline 04:50  $548.00
+           - American Airline 14:08  $550.00
+       15:
+           - American Airline 04:14  $563.00
+           - Jet Blue 02:36  $582.00
+           - Jet Blue 01:23  $552.00
+           - American Airline 05:20  $539.00
+           - American Airline 07:32  $579.00
+       16:
+           - Virgin America 16:07  $573.00
+           - Virgin America 02:33  $569.00
+           - American Airline 07:10  $482.00
+           - American Airline 21:42  $519.00
+           - American Airline 07:04  $569.00
+       17:
+           - American Airline 06:03  $574.00
+           - American Airline 14:39  $455.00
+           - American Airline 03:26  $570.00
+           - American Airline 03:33  $486.00
+           - American Airline 20:06  $582.00
+       18:
+           - American Airline 11:42  $512.00
+           - American Airline 06:54  $585.00
+           - Virgin America 08:17  $489.00
+           - Virgin America 07:12  $508.00
+           - American Airline 09:32  $565.00
+       19:
+           - American Airline 15:46  $551.00
+           - Jet Blue 10:21  $577.00
+           - American Airline 02:07  $489.00
+           - American Airline 11:50  $505.00
+           - Virgin America 17:56  $577.00
+
+13var:
+    ATL-LAX:
+
+        14:
+            - United 18:03  $345.00
+            - United 18:17  $343.00
+            - United 02:24  $341.00
+            - American Airline 12:49  $353.00
+            - American Airline 11:55  $341.00
+        15:
+            - American Airline 14:52  $343.00
+            - American Airline 18:05  $354.00
+            - American Airline 01:43  $348.00
+            - American Airline 18:20  $351.00
+            - American Airline 22:41  $346.00
+        16:
+            - American Airline 05:43  $354.00
+            - American Airline 00:15  $343.00
+            - American Airline 16:05  $343.00
+            - American Airline 12:16  $341.00
+            - American Airline 16:28  $345.00
+        17:
+            - American Airline 09:14  $351.00
+            - American Airline 13:04  $355.00
+            - American Airline 22:29  $347.00
+            - American Airline 21:58  $354.00
+            - American Airline 03:11  $342.00
+        18:
+            - American Airline 11:05  $346.00
+            - American Airline 20:32  $342.00
+            - American Airline 18:43  $350.00
+            - American Airline 21:18  $355.00
+            - American Airline 08:40  $354.00
+        19:
+            - United 11:54 $347.00
+            - American Airline 11:44  $355.00
+            - American Airline 07:44  $347.00
+            - American Airline 09:45  $351.00
+            - American Airline 06:37  $346.00
+
+    ATL-JFK:
+
+        14:
+            - American Airline 15:48  $429.00
+            - American Airline 13:48  $430.00
+            - American Airline 10:01  $424.00
+            - American Airline 11:39  $422.00
+            - American Airline 05:29  $423.00
+        15:
+            - American Airline 22:04  $434.00
+            - American Airline 06:22  $421.00
+            - American Airline 12:56  $426.00
+            - American Airline 21:11  $425.00
+            - American Airline 19:55  $424.00
+        16:
+            - American Airline 22:50  $435.00
+            - American Airline 20:35  $434.00
+            - American Airline 01:39  $430.00
+            - American Airline 04:26  $434.00
+            - American Airline 13:01  $423.00
+        17:
+            - American Airline 22:14  $421.00
+            - American Airline 19:30  $429.00
+            - American Airline 01:55  $431.00
+            - American Airline 14:40  $428.00
+            - American Airline 15:03  $431.00
+        18:
+            - American Airline 11:43  $423.00
+            - American Airline 10:33  $422.00
+            - American Airline 01:27  $434.00
+            - American Airline 17:47  $427.00
+            - American Airline 09:50  $426.00
+        19:
+            - American Airline 22:22  $424.00
+            - American Airline 20:41  $426.00
+            - American Airline 05:51  $434.00
+            - American Airline 19:11  $430.00
+            - American Airline 19:31  $425.00
+
+    LAX-JFK:
+
+        14:
+            - American Airline 07:22  $544.00
+            - American Airline 02:13  $563.00
+            - American Airline 04:36  $541.00
+            - American Airline 15:23  $555.00
+            - American Airline 00:12  $557.00
+        15:
+            - American Airline 02:16  $517.00
+            - American Airline 08:16  $561.00
+            - American Airline 19:56  $529.00
+            - American Airline 16:05  $569.00
+            - American Airline 19:33  $538.00
+        16:
+            - American Airline 04:05  $555.00
+            - American Airline 01:33  $524.00
+            - American Airline 08:59  $555.00
+            - American Airline 16:32  $514.00
+            - American Airline 07:36  $550.00
+        17:
+            - American Airline 01:46  $519.00
+            - American Airline 17:16  $559.00
+            - American Airline 08:46  $553.00
+            - American Airline 15:43  $514.00
+            - American Airline 19:28  $528.00
+        18:
+            - American Airline 13:44  $521.00
+            - American Airline 03:34  $533.00
+            - American Airline 02:51  $535.00
+            - American Airline 06:31  $522.00
+            - American Airline 13:35  $531.00
+        19:
+            - American Airline 23:50  $535.00
+            - American Airline 03:35  $528.00
+            - American Airline 12:20  $521.00
+            - American Airline 18:03  $559.00
+            - American Airline 00:14  $528.00
+
+14var:
+
+    ATL-LAX:
+
+        15:
+            - American Airline 08:16  $366.00
+            - Green Frontier 16:31  $370.00
+            - American Airline 17:01  $336.00
+            - American Airline 08:53  $359.00
+            - American Airline 23:03  $352.00
+        16:
+            - American Airline 17:41  $379.00
+            - Green Frontier 23:27  $376.00
+            - American Airline 17:47  $355.00
+            - American Airline 02:47  $344.00
+            - American Airline 00:47  $346.00
+        17:
+            - American Airline 05:37  $372.00
+            - Green Frontier 15:04  $364.00
+            - American Airline 07:20  $346.00
+            - American Airline 22:25  $344.00
+            - American Airline 22:44  $359.00
+        18:
+            - American Airline 22:18  $337.00
+            - Green Frontier 06:05  $378.00
+            - American Airline 09:33  $369.00
+            - American Airline 17:36  $366.00
+            - American Airline 00:10  $350.00
+        19:
+            - American Airline 04:15  $369.00
+            - Green Frontier 04:34  $366.00
+            - American Airline 07:42  $359.00
+            - United 08:43  $380.00
+            - United 14:41  $346.00
+
+    ATL-JFK:
+
+        15:
+            - American Airline 17:01  $432.00
+            - American Airline 17:48  $432.00
+            - American Airline 00:44  $431.00
+            - American Airline 20:19  $426.00
+            - American Airline 14:31  $435.00
+        16:
+            - American Airline 22:59  $434.00
+            - American Airline 15:39  $431.00
+            - American Airline 13:58  $420.00
+            - American Airline 04:46  $433.00
+            - American Airline 21:42  $425.00
+        17:
+            - American Airline 20:40  $431.00
+            - American Airline 19:55  $428.00
+            - American Airline 00:36  $424.00
+            - American Airline 03:16  $423.00
+            - American Airline 01:30  $428.00
+        18:
+            - American Airline 02:47  $428.00
+            - American Airline 06:46  $429.00
+            - American Airline 10:36  $428.00
+            - American Airline 10:09  $430.00
+            - American Airline 23:28  $421.00
+        19:
+            - American Airline 12:30  $431.00
+            - American Airline 08:30  $431.00
+            - American Airline 05:29  $428.00
+            - American Airline 01:14  $426.00
+            - American Airline 03:16  $420.00
+
+    LAX-JFK:
+
+        15:
+            - American Airline 10:00  $526.00
+            - American Airline 10:55  $359.00
+            - American Airline 11:10  $341.00
+            - American Airline 22:22  $346.00
+            - American Airline 10:41  $362.00
+        16:
+            - American Airline 20:03  $365.00
+            - American Airline 13:49  $376.00
+            - American Airline 10:35  $376.00
+            - American Airline 09:31  $379.00
+            - American Airline 12:50  $362.00
+        17:
+            - American Airline 16:37  $360.00
+            - American Airline 00:13  $373.00
+            - American Airline 10:05  $363.00
+            - American Airline 13:02  $380.00
+            - American Airline 17:17  $370.00
+        18:
+            - American Airline 06:20  $342.00
+            - American Airline 21:35  $344.00
+            - American Airline 18:03  $365.00
+            - American Airline 04:35  $341.00
+            - American Airline 07:04  $363.00
+        19:
+            - American Airline 00:12  $380.00
+            - American Airline 11:30  $376.00
+            - American Airline 23:59  $362.00
+            - American Airline 02:37  $353.00
+            - American Airline 00:09  $378.00
